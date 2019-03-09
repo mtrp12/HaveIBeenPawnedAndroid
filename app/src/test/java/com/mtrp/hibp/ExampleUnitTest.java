@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void getSHA1_isCorrect(){
+        String HelloWorldSHA1 = "DB8AC1C259EB89D4A131B253BACFCA5F319D54F2";
+        String packageNameSHA1 = "FDD0089144FEC1C32FCB710A51D61127B8DF0001";
+
+        assertEquals(Util.getSHA1("HelloWorld"), HelloWorldSHA1);
+        assertEquals(Util.getSHA1("com.mtrp.hibp"), packageNameSHA1);
+    }
 }

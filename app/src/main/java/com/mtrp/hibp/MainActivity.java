@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView bt_toggle;
     private Button bt_check;
     private String password;
+    private String pwdSha1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 password = pt_password.getText().toString();
+                pwdSha1 = Util.getSHA1(password);
                 Log.d("MAIN_ACTIVITY", "PASSWORD_TEXT: " + password);
+                Log.d("MAIN_ACTIVITY", "PASSWORD_HASH: " + pwdSha1);
             }
         });
     }
