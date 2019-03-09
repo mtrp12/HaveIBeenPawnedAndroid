@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HaveIBeenPawned</string>
+    <string name="check_button_text">Pawned?</string>
+    <string name="pt_password_hint">Enter Password</string>
+    <string name="bt_toggle_show_text">SHOW</string>
+    <string name="bt_toggle_hide_text">HIDE</string>
+</resources>
