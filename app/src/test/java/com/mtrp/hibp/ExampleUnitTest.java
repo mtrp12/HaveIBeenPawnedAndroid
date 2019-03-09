@@ -1,6 +1,14 @@
 package com.mtrp.hibp;
 
+import android.util.Log;
+
 import org.junit.Test;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 import static org.junit.Assert.*;
 
@@ -22,5 +30,18 @@ public class ExampleUnitTest {
 
         assertEquals(Util.getSHA1("HelloWorld"), HelloWorldSHA1);
         assertEquals(Util.getSHA1("com.mtrp.hibp"), packageNameSHA1);
+    }
+
+    @Test
+    public void getPwnSHAList_isWorking(){
+        String url = "https://api.pwnedpasswords.com/range/21BD1";
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(url).get().build();
+        try {
+            Response response = client.newCall(request).execute();
+            assertTrue(response.body().string().contains("2DC183F740EE76F27B78EB39C8AD972A757"));
+        } catch (IOException e) {
+            Log.e("TEST", "Request failed", e);
+        }
     }
 }
