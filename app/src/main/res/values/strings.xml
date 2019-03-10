@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HaveIBeenPawned</string>
+    <string name="app_name">Have I Been Pawned?</string>
     <string name="check_button_text">Pawned?</string>
     <string name="pt_password_hint">Enter Password</string>
     <string name="bt_toggle_show_text">SHOW</string>
